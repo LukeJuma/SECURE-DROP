@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureDrop | Anonymous Reporting System</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-user-secret"></i>
+            SecureDrop
+        </div>
+        <nav class="nav-links" style="display:flex; align-items:center;">
+            <a href="index.html" class="active">Submit Report</a>
+            <a href="status.html">Track Status</a>
+            <a href="login.html"><i class="fa-solid fa-lock"></i> Admin</a>
+            <button class="btn-icon" id="theme-toggle" aria-label="Toggle Theme" style="margin-left: 1rem;"><i class="fa-solid fa-moon"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <h1 class="gradient-text">Safe, Encrypted & 100% Anonymous</h1>
+            <p class="hero-sub">Report sensitive issues safely without being identified. Your identity remains hidden while the organization investigates.</p>
+        </div>
+
+        <div style="max-width: 700px; margin: 0 auto;">
+            <!-- Submission Form -->
+            <div class="card animated" id="submission-card">
+                <h2><i class="fa-solid fa-file-shield" style="color: var(--accent-color); margin-right: 10px;"></i> File a New Report</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; margin-top: 0.5rem;">
+                    All information is end-to-end encrypted. We do not store your IP address or session data.
+                </p>
+
+                <div id="alert-box" class="alert hidden"></div>
+
+                <form id="report-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Title / Issue Subject *</label>
+                        <input type="text" id="title" name="title" required placeholder="E.g., Financial Fraud in Dept X">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Detailed Description *</label>
+                        <textarea id="description" name="description" required placeholder="Provide as much detail as possible to help the investigation..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Evidence (Optional)</label>
+                        <label class="file-upload" for="file-upload">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span id="file-name">Click to browse or drag and drop a file</span>
+                        </label>
+                        <input type="file" id="file-upload" name="file">
+                    </div>
+
+                    <button type="submit" class="btn btn-block" id="submit-btn">
+                        <i class="fa-solid fa-lock"></i> Encrypt & Submit
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success State -->
+            <div class="card hidden text-center" id="success-card">
+                <i class="fa-solid fa-circle-check" style="font-size: 4rem; color: var(--success-color); margin-bottom: 1rem;"></i>
+                <h2>Report Submitted Successfully</h2>
+                <p style="color: var(--text-muted); margin-top: 1rem;">
+                    Your report has been encrypted and securely stored. To track updates or read admin responses, save the following Case ID.
+                </p>
+                <div style="margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--warning-color); border-radius: 8px; background: rgba(245, 158, 11, 0.05);">
+                    <p style="color: var(--warning-color); font-weight: 600; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-triangle-exclamation"></i> WARNING: This ID is shown ONLY ONCE. If you lose it, you cannot recover your case.
+                    </p>
+                    <div class="case-id-display" id="generated-case-id">SD-XXXXXX</div>
+                    <br>
+                    <button class="btn btn-outline" style="margin-top: 1rem;" onclick="copyCaseId()">
+                        <i class="fa-regular fa-copy"></i> Copy to Clipboard
+                    </button>
+                </div>
+
+                <a href="status.html" class="btn">Track Status Now</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fa-solid fa-lock"></i> Secured with AES-256 Encryption & SHA-256 Integrity Checks.</p>
+    </footer>
+
+    <script src="./js/theme.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        // Update file name display
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : "Click to browse or drag and drop a file";
+            document.getElementById('file-name').textContent = fileName;
+        });
+
+        function copyCaseId() {
+            const id = document.getElementById('generated-case-id').textContent;
+            navigator.clipboard.writeText(id).then(() => {
+                alert("Case ID copied to clipboard!");
+            });
+        }
+    </script>
+</body>
+</html>
