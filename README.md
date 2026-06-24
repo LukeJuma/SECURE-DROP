@@ -66,27 +66,7 @@ GitHub
 VS Code
 
 
-📂 Project Structure
-SecureDrop/
-│
-├── backend/
-│   ├── routes/
-│   ├── models/
-│   ├── schemas/
-│   ├── database/
-│   ├── authentication/
-│   └── main.py
-│
-├── frontend/
-│   ├── css/
-│   ├── js/
-│   ├── assets/
-│   └── index.html
-│
-├── docs/
-├── requirements.txt
-├── .env
-└── README.md
+
 
 ## 📄 License
 
