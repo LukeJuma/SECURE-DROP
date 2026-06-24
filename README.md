@@ -1,149 +1,92 @@
-# SECURE-DROP
-# DropSafe – Secure Storytelling Platform for Sickle Cell Awareness
+SecureDrop
 
-## 📌 Overview
+A modern, privacy-focused platform designed to provide a safe, supportive, and expressive space for individuals to share thoughts, experiences, and messages securely. SecureDrop prioritizes user privacy, data protection, and a seamless user experience while fostering meaningful communication and community engagement.
 
-**DropSafe** is a modern web platform designed to provide a **safe, supportive, and expressive space** for individuals living with Sickle Cell Disease to share their personal stories, connect with others, and access helpful resources.
+Overview
 
-The platform focuses on **community storytelling, privacy, and accessibility**, ensuring users feel comfortable and empowered while engaging with the system.
+SecureDrop is a secure web application built to enable users to communicate, share content, and engage with others in a protected environment. The platform emphasizes:
 
----
+Privacy-first communication
+Secure user authentication
+Data confidentiality
+User-friendly experience
+Community engagement and support
 
-## 🎯 Objectives
+Whether users want to express themselves anonymously, connect with others, or share important information, SecureDrop provides a trusted platform designed with security in mind.
 
-* Create a **safe digital space** for sharing personal experiences
-* Raise awareness about Sickle Cell Disease
-* Enable **community engagement** through stories, reactions, and comments
-* Provide **accessible and easy-to-use UI** for all users
+Features
 
----
+User Management
+User registration and login
+Secure password hashing
+JWT-based authentication
+Password reset functionality
+Profile management
+Security Features
+Encrypted data transmission (HTTPS)
+Secure authentication mechanisms
+Role-based access control
+Protection against common web vulnerabilities
+Activity monitoring and logging
+Content Management
+Create and manage posts/messages
+View community submissions
+Search and filter content
+User interaction features
+Privacy Features
+Privacy-focused design
+Secure storage of user information
+Controlled data access
+User account protection
+Administration
+Admin dashboard
+User management
+Content moderation
+Activity monitoring
+Security oversight
 
-## ✨ Key Features
 
-### 👤 User Features
+🛠️ Technology Stack
+Frontend
+HTML5
+CSS3
+JavaScript
+Bootstrap / Tailwind CSS (depending on implementation)
+Backend
+Python
+FastAPI
+Database
+MySQL
+Authentication
+JWT (JSON Web Tokens)
+Password Hashing
+Development Tools
+Git
+GitHub
+VS Code
 
-* User registration and login
-* Create and share personal stories
-* Option to post **anonymously**
-* View and explore community stories
-* React (❤️ support) and comment on stories
-* Personal dashboard to manage stories
 
----
-
-### 🛡️ Admin Features
-
-* Moderate user-submitted stories
-* Approve or reject content
-* Manage users and reported content
-* Maintain a safe and respectful environment
-
----
-
-### 📚 Content & Resources
-
-* Educational information about Sickle Cell Disease
-* Awareness-focused content
-* Support and guidance resources
-
----
-
-## 🎨 UI/UX Design Principles
-
-DropSafe is built with a **human-centered design approach**:
-
-* **Clean and minimal interface**
-* **Soft and calming color palette** (blue, purple, white)
-* **Responsive design** (mobile-first)
-* **Accessible typography and layout**
-* Emotionally supportive and inclusive user experience
-
----
-
-## 🧱 System Architecture
-
-### Frontend
-
-* React / HTML, CSS, JavaScript
-* Tailwind CSS (UI styling)
-
-### Backend
-
-* FastAPI
-* JWT Authentication
-
-### Database
-
-* MySQL
-
----
-
-## 📂 Project Structure
-
-```
-DropSafe/
+📂 Project Structure
+SecureDrop/
 │
-├── frontend/        # UI (React or static frontend)
-├── backend/         # FastAPI backend
-├── database/        # SQL schemas
-├── assets/          # Images and static files
+├── backend/
+│   ├── routes/
+│   ├── models/
+│   ├── schemas/
+│   ├── database/
+│   ├── authentication/
+│   └── main.py
+│
+├── frontend/
+│   ├── css/
+│   ├── js/
+│   ├── assets/
+│   └── index.html
+│
+├── docs/
+├── requirements.txt
+├── .env
 └── README.md
-```
-
----
-
-## 🔐 Security Features
-
-* JWT-based authentication
-* Secure password hashing
-* Input validation
-* Content moderation system
-* Privacy controls (anonymous posting)
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/dropsafe.git
-cd dropsafe
-```
-
-### 2. Setup Backend
-
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-### 3. Setup Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
----
-
-## 🌍 Future Enhancements
-
-* Real-time chat/support groups
-* Notifications system
-* Integration with healthcare organizations
-* Advanced search and filtering
-* Dark mode support
-
----
-
-## 🤝 Contribution
-
-Contributions are welcome! Feel free to fork the repo and submit a pull request.
-
----
 
 ## 📄 License
 
